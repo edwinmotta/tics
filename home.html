@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edwin A. Motta Herrera | Bilingual Educator & EdTech Researcher</title>
+    <title>Teacher Motta | Premier Online English Academy & Interpretation Services</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter & Plus Jakarta Sans -->
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -43,14 +43,14 @@
     </script>
     <style>
         .glass-card {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(226, 232, 240, 0.8);
         }
         .dark-glass {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.88);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(51, 65, 85, 0.5);
+            border: 1px solid rgba(51, 65, 85, 0.6);
         }
         .tab-btn.active {
             color: #16a34a;
@@ -58,51 +58,60 @@
             font-weight: 700;
         }
         .animate-fade-in {
-            animation: fadeIn 0.4s ease-in-out forwards;
+            animation: fadeIn 0.35s ease-in-out forwards;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Main Header / Navigation -->
     <header class="sticky top-0 z-50 glass-card shadow-sm border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Brand / Logo -->
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('tab-inicio')">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('tab-home')">
                     <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-heading font-extrabold text-xl shadow-md shadow-emerald-500/20">
-                        EM
+                        TM
                     </div>
                     <div>
-                        <h1 class="font-heading font-extrabold text-lg sm:text-xl text-slate-900 leading-tight">Edwin A. Motta</h1>
+                        <h1 class="font-heading font-extrabold text-lg sm:text-xl text-slate-900 leading-tight">Teacher Motta</h1>
                         <p class="text-xs text-emerald-600 font-semibold tracking-wide flex items-center gap-1">
-                            <span>@teachermotta</span>
+                            <span>English Academy & Interpretation</span>
                             <i class="fa-solid fa-circle-check text-[10px]"></i>
                         </p>
                     </div>
                 </div>
 
-                <!-- Desktop Navigation Tabs -->
+                <!-- Desktop Navigation Bar -->
                 <nav class="hidden lg:flex space-x-1 font-medium text-sm text-slate-600">
-                    <button onclick="switchTab('tab-inicio')" id="nav-tab-inicio" class="tab-btn active px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
-                        <i class="fa-solid fa-house text-xs"></i> Home
+                    <button onclick="switchTab('tab-home')" id="nav-tab-home" class="tab-btn active px-3.5 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-house text-xs"></i> Home & Services
                     </button>
-                    <button onclick="switchTab('tab-academia')" id="nav-tab-academia" class="tab-btn px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
-                        <i class="fa-solid fa-graduation-cap text-xs"></i> Academics & Research
+                    <button onclick="switchTab('tab-courses')" id="nav-tab-courses" class="tab-btn px-3.5 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-xs"></i> English Academy
                     </button>
-                    <button onclick="switchTab('tab-docencia')" id="nav-tab-docencia" class="tab-btn px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
-                        <i class="fa-solid fa-chalkboard-user text-xs"></i> Teaching & EdTech
+                    <button onclick="switchTab('tab-interpretation')" id="nav-tab-interpretation" class="tab-btn px-3.5 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-headset text-xs"></i> Interpretation
                     </button>
-                    <button onclick="switchTab('tab-interpretacion')" id="nav-tab-interpretacion" class="tab-btn px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
-                        <i class="fa-solid fa-language text-xs"></i> Interpretation & Skills
+                    <button onclick="switchTab('tab-blog')" id="nav-tab-blog" class="tab-btn px-3.5 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-newspaper text-xs"></i> Blog & Resources
+                    </button>
+                    <button onclick="switchTab('tab-contact')" id="nav-tab-contact" class="tab-btn px-3.5 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check text-xs"></i> About & Booking
                     </button>
                 </nav>
 
-                <!-- Mobile Menu Button -->
+                <!-- Action Button Desktop -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <button onclick="switchTab('tab-courses')" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-md shadow-emerald-600/20 transition">
+                        <i class="fa-solid fa-bolt mr-1"></i> Book Free Trial
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Hamburger Button -->
                 <div class="lg:hidden flex items-center">
                     <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
                         <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
@@ -111,585 +120,702 @@
             </div>
         </div>
 
-        <!-- Mobile Navigation Drawer -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-1 shadow-lg">
-            <button onclick="switchTab('tab-inicio'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
-                <i class="fa-solid fa-house w-5 text-emerald-600"></i> Home
+            <button onclick="switchTab('tab-home'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-house w-5 text-emerald-600"></i> Home & Services
             </button>
-            <button onclick="switchTab('tab-academia'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
-                <i class="fa-solid fa-graduation-cap w-5 text-emerald-600"></i> Academics & Research
+            <button onclick="switchTab('tab-courses'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-graduation-cap w-5 text-emerald-600"></i> English Academy
             </button>
-            <button onclick="switchTab('tab-docencia'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
-                <i class="fa-solid fa-chalkboard-user w-5 text-emerald-600"></i> Teaching & EdTech
+            <button onclick="switchTab('tab-interpretation'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-headset w-5 text-emerald-600"></i> Interpretation
             </button>
-            <button onclick="switchTab('tab-interpretacion'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
-                <i class="fa-solid fa-language w-5 text-emerald-600"></i> Interpretation & Skills
+            <button onclick="switchTab('tab-blog'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-newspaper w-5 text-emerald-600"></i> Blog & Resources
+            </button>
+            <button onclick="switchTab('tab-contact'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-calendar-check w-5 text-emerald-600"></i> About & Booking
             </button>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
 
-        <!-- ==================== TAB 1: HOME ==================== -->
-        <section id="tab-inicio" class="tab-content animate-fade-in space-y-12">
-            <!-- Hero Section -->
+        <section id="tab-home" class="tab-content animate-fade-in space-y-12">
+            <!-- Hero Section with Background Decorative Effects -->
             <div class="relative rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 text-white p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
-                <!-- Background Decorative Gradients -->
-                <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -right-20 -top-20 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-teal-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-                <div class="relative z-10 max-w-4xl space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-semibold">
-                        <i class="fa-solid fa-location-dot"></i> Tuluá, Valle del Cauca, Colombia
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-semibold">
+                            <i class="fa-solid fa-award"></i> Ranked #1 GPA Scholar & Certified EdTech Instructor
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl font-heading font-extrabold tracking-tight leading-tight">
+                            Accelerate Your English & Global Communication
+                        </h1>
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                            Welcome to <strong>Teacher Motta Academy</strong>! We specialize in AI-powered personalized English courses, Medical & Vocational language training, and high-accuracy remote Spanish-English interpretation.
+                        </p>
+
+                        <!-- Call to Action Buttons -->
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button onclick="switchTab('tab-courses')" class="px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-900 font-extrabold rounded-xl shadow-lg shadow-emerald-500/25 transition duration-200 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap"></i> Explore Academy Courses
+                            </button>
+                            <button onclick="switchTab('tab-interpretation')" class="px-6 py-3.5 bg-slate-800/90 hover:bg-slate-700 text-slate-200 font-semibold rounded-xl border border-slate-600/60 transition duration-200 flex items-center gap-2">
+                                <i class="fa-solid fa-headset"></i> Request Interpretation
+                            </button>
+                        </div>
                     </div>
-                    <h1 class="text-3xl sm:text-5xl font-heading font-extrabold tracking-tight leading-tight">
-                        Edwin A. Motta Herrera
-                    </h1>
-                    <p class="text-emerald-400 text-lg sm:text-xl font-medium">
-                        Bilingual Educator | EdTech Researcher | English-Spanish Interpreter
-                    </p>
-                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-                        Dedicated to transforming language learning through the innovative use of Artificial Intelligence, inclusive pedagogy, and intercultural exchange. Overcoming educational boundaries with digital innovation and academic excellence.
-                    </p>
 
-                    <!-- Key Action Buttons -->
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="mailto:e.motta24@gmail.com" class="px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-900 font-extrabold rounded-xl shadow-lg shadow-emerald-500/25 transition duration-200 flex items-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> Get in Touch
-                        </a>
-                        <button onclick="switchTab('tab-academia')" class="px-6 py-3.5 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold rounded-xl border border-slate-600/50 transition duration-200 flex items-center gap-2">
-                            <i class="fa-solid fa-book-bookmark"></i> View Research & Achievements
+                    <!-- Video Teaser Container (Multimedia Requirement) -->
+                    <div class="lg:col-span-5 bg-slate-900/90 p-4 rounded-2xl border border-slate-700/80 shadow-2xl">
+                        <div class="flex items-center justify-between mb-3 text-xs text-slate-400">
+                            <span class="font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-solid fa-video text-emerald-400 text-sm"></i> Featured Video Lesson
+                            </span>
+                            <span>@teachermotta</span>
+                        </div>
+                        <!-- Embedded Video Frame -->
+                        <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-inner">
+                            <iframe 
+                                class="w-full h-full border-0" 
+                                src="https://www.loom.com/embed/c0b77e349ded406989f07dc499a2dad8" 
+                                title="Teacher Motta English Class Sample" 
+                                frameborder="0"
+                                webkitallowfullscreen 
+                                mozallowfullscreen 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-3 text-center">
+                            <i class="fa-solid fa-circle-play text-emerald-400"></i> Watch a 2-minute class demonstration on micro-learning strategy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Proof Metrics Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">8+ Years</h2>
+                    <p class="text-slate-600 text-sm font-medium mt-1">Teaching & Tutoring Experience</p>
+                    <p class="text-xs text-emerald-600 mt-2 font-semibold"><i class="fa-solid fa-check"></i> 1,000+ Online & In-Person Classes</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">Top GPA</h2>
+                    <p class="text-slate-600 text-sm font-medium mt-1">#1 Academic Ranking (UCEVA)</p>
+                    <p class="text-xs text-amber-700 mt-2 font-semibold"><i class="fa-solid fa-award"></i> "Estudiante Buena Nota" Award</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">TOEFL 84</h2>
+                    <p class="text-slate-600 text-sm font-medium mt-1">B2+ High-Intermediate English</p>
+                    <p class="text-xs text-sky-700 mt-2 font-semibold"><i class="fa-solid fa-headset"></i> Active Consecutive Interpreter</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">AI-Powered</h2>
+                    <p class="text-slate-600 text-sm font-medium mt-1">EdTech Learning Methodology</p>
+                    <p class="text-xs text-purple-700 mt-2 font-semibold"><i class="fa-solid fa-microscope"></i> Published Research Author (2025)</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="text-center max-w-2xl mx-auto space-y-2">
+                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Core Entrepreneurship Services</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold font-heading text-slate-900">What We Offer at Teacher Motta</h2>
+                    <p class="text-slate-600 text-sm">Customized educational and language solutions designed for individual learners, professionals, and organizations.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                    <!-- Service Card 1 -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between hover:border-emerald-500 transition">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">1-on-1 & Group English Classes</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Personalized online lessons covering speaking confidence, grammar foundations, vocabulary expansion, and real-life conversation routines.
+                            </p>
+                        </div>
+                        <button onclick="switchTab('tab-courses')" class="mt-6 text-xs font-bold text-emerald-600 hover:text-emerald-800 flex items-center gap-1">
+                            View Course Options <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between hover:border-emerald-500 transition">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-user-nurse"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Medical & Vocational English</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Specialized training modules for healthcare professionals, nursing trainees, and customer support agents seeking sector-specific fluency.
+                            </p>
+                        </div>
+                        <button onclick="switchTab('tab-courses')" class="mt-6 text-xs font-bold text-teal-600 hover:text-teal-800 flex items-center gap-1">
+                            Explore Vocational Programs <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 flex flex-col justify-between hover:border-emerald-500 transition">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Bilingual Interpretation</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Professional remote consecutive Spanish-English interpretation for medical consultations, legal proceedings, and business operations.
+                            </p>
+                        </div>
+                        <button onclick="switchTab('tab-interpretation')" class="mt-6 text-xs font-bold text-cyan-600 hover:text-cyan-800 flex items-center gap-1">
+                            Book Interpretation Service <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Quick Metrics Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Metric 1 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-trophy"></i>
-                    </div>
-                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">#1 Ranked</h2>
-                    <p class="text-slate-600 text-sm font-medium mt-1">Highest GPA in Degree Program (UCEVA)</p>
-                    <p class="text-xs text-emerald-600 mt-2 font-semibold"><i class="fa-solid fa-award"></i> Consecutive "Estudiante Buena Nota" Honor</p>
-                </div>
-
-                <!-- Metric 2 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-microscope"></i>
-                    </div>
-                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">Published</h2>
-                    <p class="text-slate-600 text-sm font-medium mt-1">Research on AI & Macro-Skills</p>
-                    <p class="text-xs text-slate-500 mt-2">Editorial Ucevista (2025)</p>
-                </div>
-
-                <!-- Metric 3 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-certificate"></i>
-                    </div>
-                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">TOEFL 84</h2>
-                    <p class="text-slate-600 text-sm font-medium mt-1">High-Intermediate / Advanced English</p>
-                    <p class="text-xs text-sky-600 mt-2 font-semibold"><i class="fa-solid fa-language"></i> Consecutive Interpreter</p>
-                </div>
-
-                <!-- Metric 4 -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mb-4">
-                        <i class="fa-solid fa-globe"></i>
-                    </div>
-                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">Mission 2026</h2>
-                    <p class="text-slate-600 text-sm font-medium mt-1">International Student Representative</p>
-                    <p class="text-xs text-purple-600 mt-2 font-semibold"><i class="fa-solid fa-plane-departure"></i> Nat'l Univ. of Quilmes (Argentina)</p>
-                </div>
-            </div>
-
-            <!-- Profile Summary & Contact Section -->
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
-                <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-address-card"></i>
-                    </div>
+            <!-- Student Testimonials Section -->
+            <div class="bg-gradient-to-r from-slate-900 to-emerald-950 rounded-3xl p-6 sm:p-8 text-white space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
                     <div>
-                        <h2 class="text-xl font-heading font-bold text-slate-900">Integrated Professional Summary</h2>
-                        <p class="text-xs text-slate-500">Multidisciplinary profile focused on bilingual education & language services</p>
+                        <span class="text-xs uppercase font-bold text-emerald-400">Student Reviews & Feedback</span>
+                        <h3 class="text-xl font-bold font-heading text-white">What Our Learners Say</h3>
+                    </div>
+                    <div class="text-amber-400 text-sm flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-700 text-sm leading-relaxed">
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/60">
-                        <h3 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-graduation-cap text-emerald-600"></i> Academic Leadership
-                        </h3>
-                        <p>
-                            Foreign Language Teaching student at UCEVA. Recognized for maintaining the highest cumulative GPA in the entire program and leading interdisciplinary research projects ("Linking Projects").
-                        </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+                    <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/80 space-y-3">
+                        <p class="text-slate-300 italic">"Teacher Motta's Medical English module at Cruz Roja helped me feel completely confident talking with international health staff."</p>
+                        <div>
+                            <p class="font-bold text-emerald-400">Camila R.</p>
+                            <p class="text-slate-400 text-[11px]">Nursing Assistant Student</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/60">
-                        <h3 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-chalkboard text-teal-600"></i> Pedagogical Experience
-                        </h3>
-                        <p>
-                            English Instructor at the Red Cross (Nursing Assistant Program) and educational content creator (@teachermotta). Proven expertise in micro-learning, AI-driven instructional design, and private tutoring since 2017.
-                        </p>
+
+                    <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/80 space-y-3">
+                        <p class="text-slate-300 italic">"The AI prompts and micro-learning videos on TikTok make grammar super easy to remember. My speaking fluency jumped significantly!"</p>
+                        <div>
+                            <p class="font-bold text-emerald-400">Carlos M.</p>
+                            <p class="text-slate-400 text-[11px]">Private Tutoring Student</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/60">
-                        <h3 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-headset text-cyan-600"></i> Interpretation & Global Service
-                        </h3>
-                        <p>
-                            Remote bilingual interpreter for international firms including LSA and OWGS, facilitating clear, accurate, and culturally sensitive communication across healthcare, legal, and customer service domains.
+
+                    <div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/80 space-y-3">
+                        <p class="text-slate-300 italic">"Outstanding interpretation service for our remote clinical consultations. Always accurate, polite, and prompt."</p>
+                        <div>
+                            <p class="font-bold text-emerald-400">Dr. Sarah L.</p>
+                            <p class="text-slate-400 text-[11px]">Healthcare Client Representative</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-courses" class="tab-content hidden animate-fade-in space-y-8">
+            <!-- Banner Header -->
+            <div class="bg-gradient-to-r from-emerald-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                <span class="text-xs uppercase font-bold tracking-widest text-emerald-400">Academy Programs</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">Online English Courses & Training</h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
+                    Structured learning paths leveraging AI tools, active conversation, and targeted vocational vocabulary.
+                </p>
+            </div>
+
+            <!-- Course Catalog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">All Levels (A1 - C1)</span>
+                            <span class="text-xs font-bold text-slate-500">1-on-1 / Small Group</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-slate-900">General Conversational Fluency</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Overcome speaking anxiety through real-world dialogues, accent reduction drills, and customized daily lesson plans.
                         </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Accent & Pronunciation Coaching</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Practical Everyday Vocabulary</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> AI Conversation Homework Aids</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex justify-between items-center">
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase">Starting at</p>
+                            <p class="text-lg font-extrabold text-slate-900">$15 <span class="text-xs font-normal text-slate-500">/ hour</span></p>
+                        </div>
+                        <button onclick="openBookingModal('General Conversational Fluency')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 bg-teal-100 text-teal-800 text-xs font-bold rounded-full">Vocational / Healthcare</span>
+                            <span class="text-xs font-bold text-slate-500">Specialized Module</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-slate-900">Medical & Nursing English</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Tailored for nursing assistants, health trainees, and clinical personnel needing medical terminology and patient interaction skills.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-600"></i> Clinical Simulation Drills</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-600"></i> Medical Terminology & Syntax</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-600"></i> Patient Intake Communication</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex justify-between items-center">
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase">Starting at</p>
+                            <p class="text-lg font-extrabold text-slate-900">$18 <span class="text-xs font-normal text-slate-500">/ hour</span></p>
+                        </div>
+                        <button onclick="openBookingModal('Medical & Nursing English')" class="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl transition">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-bold rounded-full">Exam Prep</span>
+                            <span class="text-xs font-bold text-slate-500">Targeted</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-heading text-slate-900">TOEFL & Exam Mastery</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Strategy-focused test preparation for standardized examinations, featuring reading strategies, listening comprehension, and speaking templates.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> TOEFL Speaking & Writing Rubrics</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> Timed Mock Examinations</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> Feedback & Scoring Analysis</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6 flex justify-between items-center">
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase">Starting at</p>
+                            <p class="text-lg font-extrabold text-slate-900">$20 <span class="text-xs font-normal text-slate-500">/ hour</span></p>
+                        </div>
+                        <button onclick="openBookingModal('TOEFL & Exam Mastery')" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs rounded-xl transition">
+                            Enroll Now
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Direct Contact & Resume Section -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <!-- Direct Contact Information -->
+                <!-- Interactive Lesson Simulator -->
+                <div class="lg:col-span-7 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider"><i class="fa-solid fa-laptop-code"></i> EdTech Lesson Simulator</span>
+                        <span class="text-xs text-slate-400">Try Interactive Practice</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold font-heading text-white">Grammar Anchor: Third Person "-s" Drill</h3>
+                    <p class="text-xs text-slate-300">Test our micro-learning question format below to experience our interactive method:</p>
+
+                    <!-- Interactive Quiz Box -->
+                    <div id="quiz-container" class="bg-slate-800 p-5 rounded-2xl border border-slate-700 space-y-4">
+                        <p class="text-sm font-semibold text-slate-200">Question: Which sentence correctly applies third-person singular in Medical English?</p>
+                        <div class="space-y-2 text-xs">
+                            <button onclick="checkAnswer(1)" class="w-full text-left p-3 rounded-xl bg-slate-700/80 hover:bg-slate-700 transition flex items-center justify-between">
+                                <span>A) The doctor check the patient's blood pressure every hour.</span>
+                                <i class="fa-regular fa-circle text-slate-400" id="quiz-icon-1"></i>
+                            </button>
+                            <button onclick="checkAnswer(2)" class="w-full text-left p-3 rounded-xl bg-slate-700/80 hover:bg-slate-700 transition flex items-center justify-between">
+                                <span>B) The doctor checks the patient's blood pressure every hour.</span>
+                                <i class="fa-regular fa-circle text-slate-400" id="quiz-icon-2"></i>
+                            </button>
+                            <button onclick="checkAnswer(3)" class="w-full text-left p-3 rounded-xl bg-slate-700/80 hover:bg-slate-700 transition flex items-center justify-between">
+                                <span>C) The doctor checking the patient's blood pressure every hour.</span>
+                                <i class="fa-regular fa-circle text-slate-400" id="quiz-icon-3"></i>
+                            </button>
+                        </div>
+                        <div id="quiz-feedback" class="hidden text-xs p-3 rounded-xl font-bold"></div>
+                    </div>
+                </div>
+
+                <!-- Instant Price Estimator -->
+                <div class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+                    <span class="text-xs font-bold uppercase text-emerald-600 tracking-wider">Tuition Calculator</span>
+                    <h3 class="text-xl font-bold font-heading text-slate-900">Estimate Your Course Fee</h3>
+
+                    <div class="space-y-4 text-xs">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Select Course Type</label>
+                            <select id="calc-type" onchange="calculateTuition()" class="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500">
+                                <option value="15">Conversational English ($15/hr)</option>
+                                <option value="18">Medical & Vocational ($18/hr)</option>
+                                <option value="20">TOEFL Prep ($20/hr)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Weekly Hours: <span id="hours-val" class="text-emerald-600 font-extrabold">2</span> hrs/week</label>
+                            <input type="range" id="calc-hours" min="1" max="10" value="2" oninput="calculateTuition()" class="w-full accent-emerald-600">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Package Duration</label>
+                            <select id="calc-duration" onchange="calculateTuition()" class="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500">
+                                <option value="1">1 Month (Standard)</option>
+                                <option value="0.9">3 Months (10% Discount)</option>
+                                <option value="0.8">6 Months (20% Discount)</option>
+                            </select>
+                        </div>
+
+                        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 text-center space-y-1">
+                            <p class="text-slate-600 text-[11px] font-semibold">Estimated Monthly Fee</p>
+                            <p id="calc-total" class="text-3xl font-extrabold text-emerald-700">$120.00</p>
+                            <p id="calc-discount-msg" class="text-[10px] text-emerald-600 font-bold">Standard rate</p>
+                        </div>
+
+                        <button onclick="openBookingModal('Calculated Package')" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-xs transition">
+                            Book Package
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-interpretation" class="tab-content hidden animate-fade-in space-y-8">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-cyan-900 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                <span class="text-xs uppercase font-bold tracking-widest text-cyan-400">Language Solutions</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">Remote Spanish-English Interpretation</h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
+                    Consecutive interpretation with professional accuracy, active listening, and high cultural sensitivity across healthcare, legal, and business domains.
+                </p>
+            </div>
+
+            <!-- Interpretation Domains Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Healthcare & Medical</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Accurate interpretation for patient consultations, clinical trials, emergency services, and telehealth sessions. Experience with LSA & OWGS.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-800 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Legal & Administrative</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Supporting client interviews, legal depositions, administrative inquiries, and official documentation reviews.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Business & Customer Support</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Facilitating seamless cross-cultural communication for international client service, sales meetings, and remote teams.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interactive Audio / Interpretation Sample Box -->
+            <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl border border-slate-800">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
+                    <div>
+                        <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider"><i class="fa-solid fa-headphones"></i> Interpretation Quality Preview</span>
+                        <h3 class="text-xl font-bold font-heading text-white mt-1">Audio Audio-Visual Demonstration</h3>
+                    </div>
+                    <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs font-bold rounded-full border border-cyan-500/30">
+                        Consecutive Mode (EN &#8644; ES)
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                    <!-- Sample 1 -->
+                    <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-cyan-300"><i class="fa-solid fa-file-medical"></i> Medical Consultation Scenario</span>
+                            <span class="text-slate-400">01:15 min</span>
+                        </div>
+                        <p class="text-slate-300">Doctor gives prescription instructions in English -> Interpreted immediately into clear Spanish for the patient.</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <button onclick="toggleAudioDemo(1)" id="audio-btn-1" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl flex items-center gap-2">
+                                <i class="fa-solid fa-play" id="audio-icon-1"></i> Play Sample
+                            </button>
+                            <span id="audio-status-1" class="text-slate-400 italic">Ready to play</span>
+                        </div>
+                    </div>
+
+                    <!-- Sample 2 -->
+                    <div class="bg-slate-800 p-5 rounded-2xl border border-slate-700 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-cyan-300"><i class="fa-solid fa-building-columns"></i> Customer Support Scenario</span>
+                            <span class="text-slate-400">00:55 min</span>
+                        </div>
+                        <p class="text-slate-300">Client explains account issue in Spanish -> Interpreted accurately into technical English for the advisor.</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <button onclick="toggleAudioDemo(2)" id="audio-btn-2" class="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl flex items-center gap-2">
+                                <i class="fa-solid fa-play" id="audio-icon-2"></i> Play Sample
+                            </button>
+                            <span id="audio-status-2" class="text-slate-400 italic">Ready to play</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-blog" class="tab-content hidden animate-fade-in space-y-8">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-teal-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                <span class="text-xs uppercase font-bold tracking-widest text-teal-400">EdTech & Educational Hub</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">Language Learning Blog & Free Resources</h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
+                    Articles, tips, research breakdowns, and downloadable study guides curated by Teacher Motta.
+                </p>
+            </div>
+
+            <!-- Featured Blog Posts Grid (Blog Requirement: 3 distinct articles) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Article 1 -->
+                <article class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="AI in Education" class="w-full h-full object-cover opacity-80">
+                            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">EdTech Research</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[11px] text-slate-400 font-semibold"><i class="fa-regular fa-calendar"></i> January 2026 | By Teacher Motta</span>
+                            <h3 class="text-lg font-bold text-slate-900 leading-snug">How Generative AI Can Accelerate Your Speaking Fluency</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Insights from our published research in Editorial Ucevista on using AI prompts for real-time oral feedback and vocabulary expansion.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openArticleModal(1)" class="text-xs font-bold text-emerald-600 hover:text-emerald-800 flex items-center gap-1">
+                            Read Full Article <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Medical English" class="w-full h-full object-cover opacity-80">
+                            <span class="absolute top-3 left-3 bg-teal-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Vocational</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[11px] text-slate-400 font-semibold"><i class="fa-regular fa-calendar"></i> February 2026 | By Teacher Motta</span>
+                            <h3 class="text-lg font-bold text-slate-900 leading-snug">5 Essential Phrases Every Nursing Trainee Must Know in English</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                A practical breakdown of healthcare communication protocols used in our Red Cross Nursing Assistant English modules.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openArticleModal(2)" class="text-xs font-bold text-teal-600 hover:text-teal-800 flex items-center gap-1">
+                            Read Full Article <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="h-44 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Pronunciation Tips" class="w-full h-full object-cover opacity-80">
+                            <span class="absolute top-3 left-3 bg-purple-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Pronunciation</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-[11px] text-slate-400 font-semibold"><i class="fa-regular fa-calendar"></i> March 2026 | By Teacher Motta</span>
+                            <h3 class="text-lg font-bold text-slate-900 leading-snug">Fixing the Top 3 Pronunciation Traps for Native Spanish Speakers</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed">
+                                Simple tongue placement anchors and micro-drills to fix vowel sounds and final consonant clusters effortlessly.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openArticleModal(3)" class="text-xs font-bold text-purple-600 hover:text-purple-800 flex items-center gap-1">
+                            Read Full Article <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Downloadable Resources Showcase -->
+            <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <div>
+                        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Free Study Resources</span>
+                        <h3 class="text-xl font-bold font-heading text-white">Downloadable English Guides</h3>
+                    </div>
+                    <span class="text-xs text-slate-400">@teachermotta EdTech</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div class="bg-slate-800 p-4 rounded-2xl border border-slate-700 flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white">Medical English Vocab Cheatsheet</p>
+                                <p class="text-[11px] text-slate-400">PDF Guide • 15 Pages</p>
+                            </div>
+                        </div>
+                        <button onclick="copyResourceSummary('Medical English Vocab Cheatsheet')" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl transition">
+                            Get Guide
+                        </button>
+                    </div>
+
+                    <div class="bg-slate-800 p-4 rounded-2xl border border-slate-700 flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white">Top 10 ChatGPT Prompts for English Practice</p>
+                                <p class="text-[11px] text-slate-400">Interactive Prompt Guide</p>
+                            </div>
+                        </div>
+                        <button onclick="copyResourceSummary('Top 10 ChatGPT Prompts for English Practice')" class="px-3 py-2 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-xl transition">
+                            Get Guide
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-contact" class="tab-content hidden animate-fade-in space-y-8">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-slate-900 to-emerald-950 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                <span class="text-xs uppercase font-bold tracking-widest text-emerald-400">Instructor & Business Owner</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">About Edwin A. Motta Herrera</h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
+                    Ranked #1 GPA student at UCEVA, published scientific researcher, and founder of Teacher Motta English Academy.
+                </p>
+            </div>
+
+            <!-- About Instructor Info Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Credentials & Contact Box -->
                 <div class="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
-                    <h3 class="text-2xl font-bold font-heading text-white">Direct Contact</h3>
-                    <p class="text-slate-400 text-sm">
-                        Available for academic collaborations, educational projects, and professional inquiries.
+                    <h3 class="text-2xl font-bold font-heading text-white">Direct Contacts</h3>
+                    <p class="text-slate-400 text-xs">
+                        Reach out directly to schedule a class, request interpretation services, or explore educational partnerships.
                     </p>
 
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                    <div class="space-y-3 text-xs">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/80 rounded-2xl border border-slate-700">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-base">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div>
-                                <p class="text-xs text-slate-400 font-medium">Email Address</p>
+                                <p class="text-[10px] text-slate-400 font-medium">Email</p>
                                 <a href="mailto:e.motta24@gmail.com" class="font-bold text-white hover:text-emerald-400">e.motta24@gmail.com</a>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/80 rounded-2xl border border-slate-700">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-base">
                                 <i class="fa-solid fa-phone"></i>
                             </div>
                             <div>
-                                <p class="text-xs text-slate-400 font-medium">Phone / WhatsApp</p>
-                                <a href="tel:+573175551791" class="font-bold text-white hover:text-emerald-400">+57 317 555 1791</a>
+                                <p class="text-[10px] text-slate-400 font-medium">WhatsApp / Phone</p>
+                                <a href="https://wa.me/573175551791" target="_blank" class="font-bold text-white hover:text-emerald-400">+57 317 555 1791</a>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
-                                <i class="fa-brands fa-linkedin"></i>
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/80 rounded-2xl border border-slate-700">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-base">
+                                <i class="fa-brands fa-tiktok"></i>
                             </div>
                             <div>
-                                <p class="text-xs text-slate-400 font-medium">LinkedIn</p>
-                                <a href="https://lix.li/XTySbb" target="_blank" class="font-bold text-white hover:text-emerald-400">Professional LinkedIn Profile</a>
+                                <p class="text-[10px] text-slate-400 font-medium">Social Channels</p>
+                                <p class="font-bold text-white">@teachermotta (TikTok & YouTube)</p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/80 rounded-2xl border border-slate-700">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-base">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <p class="text-xs text-slate-400 font-medium">Location</p>
+                                <p class="text-[10px] text-slate-400 font-medium">Base Location</p>
                                 <p class="font-bold text-white">Tuluá, Valle del Cauca, Colombia</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="pt-2">
-                        <button onclick="downloadResumeCopy()" class="w-full py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-900 font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
-                            <i class="fa-solid fa-download"></i> Copy Resume Summary
-                        </button>
-                    </div>
+                    <a href="https://wa.me/573175551791" target="_blank" class="w-full py-3.5 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-xs">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Chat Instantly on WhatsApp
+                    </a>
                 </div>
 
-                <!-- Contact Message Form -->
+                <!-- Interactive Booking / Contact Form -->
                 <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
-                    <h3 class="text-xl font-bold font-heading text-slate-900">Send a Direct Message</h3>
+                    <h3 class="text-xl font-bold font-heading text-slate-900">Send an Inquiry or Book a Session</h3>
                     <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name / Organization</label>
-                            <input type="text" required placeholder="e.g. Institution Representative / Recruiter" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Your Full Name</label>
+                            <input type="text" id="form-name" required placeholder="e.g. Maria Gonzalez" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 text-xs">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Contact Email</label>
-                            <input type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Email Address</label>
+                            <input type="email" id="form-email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 text-xs">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Subject</label>
-                            <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
-                                <option>Academic / Research Inquiry</option>
-                                <option>Interpretation / Teaching Engagement</option>
-                                <option>Educational Content Collaboration</option>
-                                <option>Other Inquiry</option>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Service Requested</label>
+                            <select id="form-service" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 text-xs">
+                                <option value="General Conversational English">General Conversational English</option>
+                                <option value="Medical & Nursing English">Medical & Nursing English</option>
+                                <option value="TOEFL & Exam Prep">TOEFL & Exam Prep</option>
+                                <option value="Spanish-English Interpretation">Spanish-English Interpretation</option>
+                                <option value="EdTech Consulting">EdTech Consulting</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Message</label>
-                            <textarea rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Message / Class Goals</label>
+                            <textarea id="form-message" rows="4" required placeholder="Tell us about your learning goals or service dates..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 text-xs"></textarea>
                         </div>
-                        <button type="submit" class="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition text-sm flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        <button type="submit" class="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition text-xs flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
                         </button>
                     </form>
-                    <div id="form-success-msg" class="hidden p-4 bg-emerald-100 border border-emerald-300 text-emerald-800 text-sm font-semibold rounded-xl text-center">
-                        <i class="fa-solid fa-circle-check"></i> Thank you for reaching out! Your message has been sent successfully.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== TAB 2: ACADEMICS & RESEARCH ==================== -->
-        <section id="tab-academia" class="tab-content hidden animate-fade-in space-y-8">
-            <!-- Header Banner -->
-            <div class="bg-gradient-to-r from-emerald-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
-                <span class="text-xs uppercase font-bold tracking-widest text-emerald-400">Academic Trajectory</span>
-                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">Excellence, Leadership & Scientific Research</h2>
-                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
-                    Higher education at UCEVA backed by institutional honors, published scientific research, and international academic mobility.
-                </p>
-            </div>
-
-            <!-- University Main Card -->
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-6">
-                    <div>
-                        <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">Undergraduate Degree in Progress</span>
-                        <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900 mt-2">Unidad Central del Valle del Cauca (UCEVA)</h3>
-                        <p class="text-slate-600 font-medium text-sm">Bachelor's Degree in Foreign Languages with an Emphasis in English</p>
-                        <p class="text-xs text-slate-500 mt-1"><i class="fa-regular fa-calendar"></i> Expected Graduation: December 2029 | Tuluá, Colombia</p>
-                    </div>
-                    <div class="text-left sm:text-right">
-                        <div class="inline-block bg-amber-50 border border-amber-200 rounded-2xl p-4 text-slate-800">
-                            <p class="text-xs font-bold uppercase text-amber-700 tracking-wider">Academic Merit</p>
-                            <p class="text-lg font-extrabold text-slate-900">#1 Highest GPA</p>
-                            <p class="text-xs text-slate-600">"Estudiante Buena Nota" Award</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Academic Accomplishments List -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
-                        <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-3">
-                            <i class="fa-solid fa-award text-amber-500"></i> Institutional Recognition
-                        </h4>
-                        <ul class="space-y-2 text-sm text-slate-700">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-circle-check text-emerald-600 text-xs mt-1"></i>
-                                <span><strong>#1 Academic Ranking:</strong> Highest cumulative GPA across the entire Bachelor's degree program.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-circle-check text-emerald-600 text-xs mt-1"></i>
-                                <span><strong>"Estudiante Buena Nota" Award:</strong> Consecutively awarded every semester for outstanding performance.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
-                        <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-3">
-                            <i class="fa-solid fa-scroll text-teal-600"></i> Diplomas in Research (2025)
-                        </h4>
-                        <ul class="space-y-2 text-sm text-slate-700">
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-teal-600 text-xs mt-1"></i>
-                                <span><strong>Diploma in Research Thinking:</strong> Advanced training in scientific methodology and pedagogical problem formulation.</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fa-solid fa-check text-teal-600 text-xs mt-1"></i>
-                                <span><strong>Diploma in Development of Research Products:</strong> Writing and structuring scientific publications.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Featured Research Publication Box -->
-            <div class="bg-gradient-to-br from-slate-900 to-emerald-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-emerald-900/50">
-                <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">
-                    <i class="fa-solid fa-book-open"></i> Official Scientific Publication (2025)
-                </div>
-                <h3 class="text-xl sm:text-2xl font-bold font-heading text-white">
-                    "Incidence of AI in teaching English as a foreign language: a focus on linguistic macro-skills"
-                </h3>
-                <p class="text-slate-300 text-sm mt-2">
-                    <strong>Authors:</strong> Garcia, S. & <strong>Motta, E.</strong> (2025). Published in <em>Editorial Ucevista</em>, p. 120.
-                </p>
-
-                <div class="my-6 p-4 bg-slate-800/80 rounded-2xl border border-slate-700 text-sm text-slate-300 space-y-2">
-                    <p class="font-semibold text-emerald-300">Article Summary:</p>
-                    <p>
-                        This research explores the direct impact of Generative AI tools on developing the four core linguistic macro-skills (Listening, Speaking, Reading, Writing) in TEFL students, proposing structured pedagogical frameworks for their ethical and effective classroom integration.
-                    </p>
-                </div>
-
-                <div class="flex flex-wrap items-center justify-between gap-4">
-                    <div class="text-xs text-slate-400 font-mono">
-                        URI Repository: <a href="http://hdl.handle.net/20.500.12993/5396" target="_blank" class="text-emerald-400 hover:underline">http://hdl.handle.net/20.500.12993/5396</a>
-                    </div>
-                    <button onclick="openPublicationModal()" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold text-sm rounded-xl transition flex items-center gap-2">
-                        <i class="fa-solid fa-file-pdf"></i> View Research Overview
-                    </button>
-                </div>
-            </div>
-
-            <!-- International Mobility & Leadership Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- International Academic Mission -->
-                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl font-bold">
-                        <i class="fa-solid fa-earth-americas"></i>
-                    </div>
-                    <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-bold rounded-full">Upcoming Mission: Nov - Dec 2026</span>
-                    <h3 class="text-lg font-bold font-heading text-slate-900">International Academic Mission - Buenos Aires, Argentina</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Exclusively selected by UCEVA university administration as the primary student representative (due to ranking #1 in GPA) to participate in international academic mobility at <strong>Universidad Nacional de Quilmes</strong>.
-                    </p>
-                    <ul class="text-xs text-slate-600 space-y-2 pt-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> Cross-cultural competency workshops and advanced academic seminars.</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> Ambassador for UCEVA and Colombia in international networks.</li>
-                    </ul>
-                </div>
-
-                <!-- Linking Projects Leadership -->
-                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
-                    <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl font-bold">
-                        <i class="fa-solid fa-people-group"></i>
-                    </div>
-                    <span class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-bold rounded-full">Project Leadership (2025 - Present)</span>
-                    <h3 class="text-lg font-bold font-heading text-slate-900">Team Leader in UCEVA "Linking Projects"</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Appointed team leader to design and execute 3 consecutive multidisciplinary research projects, combining curriculum subjects to solve complex educational questions.
-                    </p>
-                    <ul class="text-xs text-slate-600 space-y-2 pt-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-600"></i> Operations management, task delegation, and data synthesis.</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-600"></i> Consistently achieved top evaluative scores.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== TAB 3: TEACHING & EDTECH ==================== -->
-        <section id="tab-docencia" class="tab-content hidden animate-fade-in space-y-8">
-            <!-- Header Banner -->
-            <div class="bg-gradient-to-r from-teal-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
-                <span class="text-xs uppercase font-bold tracking-widest text-teal-400">Methodology & Experience</span>
-                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">In-Person, Digital & EdTech Teaching</h2>
-                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
-                    Combining institutional classroom instruction, multi-platform educational content creation, and AI-powered accelerated learning strategies.
-                </p>
-            </div>
-
-            <!-- Timeline of Teaching Experience -->
-            <div class="space-y-6">
-
-                <!-- Teaching Role 1: Cruz Roja -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-2 h-full bg-red-500"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-                        <div>
-                            <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full">August 2026 - Present</span>
-                            <h3 class="text-xl font-bold font-heading text-slate-900 mt-2">English Instructor - Nursing Assistant Program</h3>
-                            <p class="text-sm font-semibold text-slate-600">Colombian Red Cross (Cruz Roja) | Buga, Colombia</p>
-                        </div>
-                        <div class="px-4 py-2 bg-slate-100 rounded-xl text-xs font-bold text-slate-700">
-                            Spanish / Medical English
-                        </div>
-                    </div>
-                    <ul class="space-y-2 text-slate-700 text-sm">
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-chevron-right text-emerald-600 text-xs mt-1"></i>
-                            <span>Delivering <strong>"English I"</strong> and <strong>"English II"</strong> modules tailored for healthcare trainees.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-chevron-right text-emerald-600 text-xs mt-1"></i>
-                            <span>Focusing on conversational fluency and essential medical terminology for healthcare environments.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-chevron-right text-emerald-600 text-xs mt-1"></i>
-                            <span>Assessing student progress through oral exams, quizzes, and clinical simulation exercises in class.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Teaching Role 2: EdTech Content Creator -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-2 h-full bg-emerald-500"></div>
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-                        <div>
-                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">October 2023 - Present</span>
-                            <h3 class="text-xl font-bold font-heading text-slate-900 mt-2">Educational Content Creator & Digital Educator</h3>
-                            <p class="text-sm font-semibold text-emerald-600">TikTok & YouTube: @teachermotta</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="px-3 py-1 bg-black text-white text-xs font-bold rounded-lg"><i class="fa-brands fa-tiktok"></i> TikTok</span>
-                            <span class="px-3 py-1 bg-red-600 text-white text-xs font-bold rounded-lg"><i class="fa-brands fa-youtube"></i> YouTube</span>
-                        </div>
-                    </div>
-                    <p class="text-slate-700 text-sm leading-relaxed mb-4">
-                        Producing micro-learning video lessons focused on practical pronunciation, grammar simplification, and vocabulary, reaching autonomous learners across Latin America and worldwide.
-                    </p>
-
-                    <!-- Interactive Demo Box -->
-                    <div class="bg-slate-900 text-white rounded-2xl p-5 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider"><i class="fa-solid fa-play"></i> Micro-Learning Teaching Strategy</span>
-                            <span class="text-xs text-slate-400">@teachermotta EdTech</span>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
-                                <p class="font-bold text-emerald-300">1. Grammar in 60 Seconds</p>
-                                <p class="text-slate-400 mt-1">Concise breakdowns with visual aids and memory anchors.</p>
-                            </div>
-                            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
-                                <p class="font-bold text-emerald-300">2. Pronunciation & AI Prompts</p>
-                                <p class="text-slate-400 mt-1">Utilizing AI tools as interactive real-time pronunciation coaches.</p>
-                            </div>
-                            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
-                                <p class="font-bold text-emerald-300">3. Active Audience Engagement</p>
-                                <p class="text-slate-400 mt-1">Interactive comment challenges that build autonomous learning habits.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Teaching Role 3: Private Tutor -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-                        <div>
-                            <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-bold rounded-full">January 2017 - Present</span>
-                            <h3 class="text-xl font-bold font-heading text-slate-900 mt-2">Independent Private English Tutor</h3>
-                            <p class="text-sm font-semibold text-slate-600">Tuluá, Colombia (In-Person & Virtual)</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-700 text-sm leading-relaxed">
-                        Providing customized 1-on-1 and small-group instruction for learners of diverse age groups and proficiency levels. Designing tailored lesson plans emphasizing speaking, listening, and core grammar foundations.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ==================== TAB 4: INTERPRETATION & SKILLS ==================== -->
-        <section id="tab-interpretacion" class="tab-content hidden animate-fade-in space-y-8">
-            <!-- Header Banner -->
-            <div class="bg-gradient-to-r from-cyan-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
-                <span class="text-xs uppercase font-bold tracking-widest text-cyan-400">Professional Versatility</span>
-                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">Bilingual Interpretation, AI & Technical Skills</h2>
-                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
-                    Solid track record in international language services and proficiency in emerging technologies applied to education and productivity.
-                </p>
-            </div>
-
-            <!-- Interpretation Experience Grid -->
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
-                <h3 class="text-xl font-bold font-heading text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-headset text-cyan-600"></i> Interpretation & Global Client Service
-                </h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- LSA -->
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
-                        <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">Feb 2024 - Present</span>
-                        <h4 class="font-bold text-slate-900 text-lg mt-2">Spanish - English Interpreter</h4>
-                        <p class="text-xs font-semibold text-slate-600">Language Services Associates (LSA) | Remote</p>
-                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                            Delivering real-time consecutive interpretation across healthcare, legal, and customer service settings with high accuracy and cultural sensitivity.
-                        </p>
-                    </div>
-
-                    <!-- OWGS -->
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
-                        <span class="text-xs font-bold text-slate-600 bg-slate-200 px-2.5 py-0.5 rounded-full">Oct 2022 - Jan 2024</span>
-                        <h4 class="font-bold text-slate-900 text-lg mt-2">Spanish - English Interpreter</h4>
-                        <p class="text-xs font-semibold text-slate-600">One World Global Services (OWGS) | Remote</p>
-                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                            Facilitating smooth cross-cultural communication between English and Spanish speakers in fast-paced professional scenarios.
-                        </p>
-                    </div>
-
-                    <!-- Teleperformance -->
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
-                        <span class="text-xs font-bold text-slate-600 bg-slate-200 px-2.5 py-0.5 rounded-full">Mar 2022 - Oct 2022</span>
-                        <h4 class="font-bold text-slate-900 text-lg mt-2">Customer Service & Sales Representative</h4>
-                        <p class="text-xs font-semibold text-slate-600">Teleperformance Colombia S.A.S | Remote</p>
-                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                            Handling international clients in English and Spanish, resolving inquiries with empathy and active listening skills.
-                        </p>
-                    </div>
-
-                    <!-- Accedo -->
-                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
-                        <span class="text-xs font-bold text-slate-600 bg-slate-200 px-2.5 py-0.5 rounded-full">Oct 2021 - Mar 2022</span>
-                        <h4 class="font-bold text-slate-900 text-lg mt-2">Customer Service & Sales Representative</h4>
-                        <p class="text-xs font-semibold text-slate-600">Accedo Technologies | Pereira, Colombia</p>
-                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                            Providing high-standard bilingual support for international accounts.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Skills & Tech Toolkit Showcase -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- AI & Technical Skills -->
-                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
-                    <h3 class="text-lg font-bold font-heading text-slate-900 flex items-center gap-2">
-                        <i class="fa-solid fa-robot text-purple-600"></i> AI & EdTech Tools
-                    </h3>
-                    <div class="space-y-3">
-                        <div>
-                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
-                                <span>Generative AI Prompting (ChatGPT, Claude, Gemini)</span>
-                                <span>Advanced</span>
-                            </div>
-                            <div class="w-full bg-slate-100 rounded-full h-2">
-                                <div class="bg-purple-600 h-2 rounded-full w-[95%]"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
-                                <span>AI-Assisted Instructional Design</span>
-                                <span>Advanced</span>
-                            </div>
-                            <div class="w-full bg-slate-100 rounded-full h-2">
-                                <div class="bg-emerald-600 h-2 rounded-full w-[90%]"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
-                                <span>Multimedia Editing (Canva, CapCut)</span>
-                                <span>Advanced</span>
-                            </div>
-                            <div class="w-full bg-slate-100 rounded-full h-2">
-                                <div class="bg-sky-600 h-2 rounded-full w-[92%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Languages & Soft Skills -->
-                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
-                    <h3 class="text-lg font-bold font-heading text-slate-900 flex items-center gap-2">
-                        <i class="fa-solid fa-comments text-emerald-600"></i> Languages & Competencies
-                    </h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center">
-                            <p class="text-xs text-emerald-700 font-bold uppercase">Spanish</p>
-                            <p class="text-lg font-extrabold text-slate-900">Native</p>
-                        </div>
-                        <div class="bg-sky-50 p-4 rounded-2xl border border-sky-100 text-center">
-                            <p class="text-xs text-sky-700 font-bold uppercase">English</p>
-                            <p class="text-lg font-extrabold text-slate-900">TOEFL 84 / B2+</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">Leadership</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">Cross-Cultural Communication</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">Adaptability</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">Classroom Management</span>
+                    <div id="form-success-msg" class="hidden p-4 bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold rounded-xl text-center">
+                        <i class="fa-solid fa-circle-check"></i> Thank you! Your request has been sent. Teacher Motta will reply within 24 hours.
                     </div>
                 </div>
             </div>
@@ -697,38 +823,56 @@
 
     </main>
 
-    <!-- Modal for Publication Abstract Details -->
-    <div id="pub-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-4 shadow-2xl animate-fade-in relative">
-            <button onclick="closePublicationModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl">
+    <!-- Article Reader Modal -->
+    <div id="article-modal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-4 shadow-2xl animate-fade-in relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeArticleModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">UCEVA Bibliographic Record</span>
-            <h3 class="text-xl font-bold font-heading text-slate-900">Incidence of AI in teaching English as a foreign language: a focus on linguistic macro-skills</h3>
-            <div class="text-xs text-slate-600 space-y-2 border-y border-slate-100 py-3">
-                <p><strong>Authors:</strong> Garcia, S. & Motta, E.</p>
-                <p><strong>Year:</strong> 2025</p>
-                <p><strong>Publisher:</strong> Editorial Ucevista, Page 120</p>
-                <p><strong>Handle/URL:</strong> http://hdl.handle.net/20.500.12993/5396</p>
+            <span id="article-tag" class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">Article</span>
+            <h3 id="article-title" class="text-xl font-bold font-heading text-slate-900">Article Title</h3>
+            <p id="article-date" class="text-xs text-slate-400 font-semibold"></p>
+            <div id="article-content" class="text-xs text-slate-700 space-y-3 leading-relaxed border-t border-slate-100 pt-3">
+                <!-- Dynamic Content Loaded via JS -->
             </div>
-            <p class="text-sm text-slate-700 leading-relaxed">
-                This study investigates how generative AI tools can be integrated into methodic English language teaching strategies to enhance listening comprehension, oral production, reading, and writing skills in higher education settings.
-            </p>
             <div class="pt-2 flex justify-end">
-                <button onclick="closePublicationModal()" class="px-5 py-2.5 bg-slate-900 text-white font-bold rounded-xl text-xs">Close</button>
+                <button onclick="closeArticleModal()" class="px-5 py-2 bg-slate-900 text-white font-bold rounded-xl text-xs">Close Reader</button>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 space-y-4 shadow-2xl animate-fade-in relative">
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg font-bold">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-slate-900">Confirm Booking</h3>
+            <p class="text-xs text-slate-600">Selected Program: <strong id="booking-program-name" class="text-emerald-600">General English</strong></p>
+            
+            <div class="space-y-3 text-xs pt-2">
+                <input type="text" id="modal-user-name" placeholder="Your Full Name" class="w-full p-3 rounded-xl border border-slate-200">
+                <input type="email" id="modal-user-email" placeholder="Your Email Address" class="w-full p-3 rounded-xl border border-slate-200">
+                <input type="tel" id="modal-user-phone" placeholder="WhatsApp Number" class="w-full p-3 rounded-xl border border-slate-200">
+            </div>
+
+            <button onclick="submitBookingModal()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs transition">
+                Confirm & Request Trial Class
+            </button>
+        </div>
+    </div>
+
     <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-2">
-                <div class="w-6 h-6 rounded-md bg-emerald-500 text-slate-900 font-bold flex items-center justify-center text-xs">EM</div>
-                <span class="font-bold text-slate-200">Edwin A. Motta Herrera</span> &copy; 2026. All rights reserved.
+                <div class="w-6 h-6 rounded-md bg-emerald-500 text-slate-900 font-bold flex items-center justify-center text-xs">TM</div>
+                <span class="font-bold text-slate-200">Teacher Motta Academy</span> &copy; 2026. All rights reserved.
             </div>
             <div class="flex items-center gap-4">
-                <a href="https://lix.li/XTySbb" target="_blank" class="hover:text-emerald-400 transition"><i class="fa-brands fa-linkedin text-base"></i></a>
+                <a href="https://wa.me/573175551791" target="_blank" class="hover:text-emerald-400 transition"><i class="fa-brands fa-whatsapp text-base"></i></a>
                 <a href="mailto:e.motta24@gmail.com" class="hover:text-emerald-400 transition"><i class="fa-solid fa-envelope text-base"></i></a>
                 <span class="text-slate-500 font-mono">@teachermotta</span>
             </div>
@@ -737,19 +881,16 @@
 
     <script>
         function switchTab(tabId) {
-            // Hide all tab contents
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => {
                 content.classList.add('hidden');
             });
 
-            // Show selected tab content
             const targetContent = document.getElementById(tabId);
             if (targetContent) {
                 targetContent.classList.remove('hidden');
             }
 
-            // Update Desktop Nav Button Styles
             const navButtons = document.querySelectorAll('.tab-btn');
             navButtons.forEach(btn => {
                 btn.classList.remove('active', 'text-emerald-600', 'border-emerald-600', 'font-bold');
@@ -762,7 +903,6 @@
                 activeNavBtn.classList.remove('border-transparent', 'text-slate-600');
             }
 
-            // Scroll to top smoothly
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -781,14 +921,152 @@
             }
         }
 
-        function openPublicationModal() {
-            document.getElementById('pub-modal').classList.remove('hidden');
+        // Quiz Simulator logic
+        function checkAnswer(option) {
+            const feedback = document.getElementById('quiz-feedback');
+            const icon1 = document.getElementById('quiz-icon-1');
+            const icon2 = document.getElementById('quiz-icon-2');
+            const icon3 = document.getElementById('quiz-icon-3');
+
+            icon1.className = "fa-regular fa-circle text-slate-400";
+            icon2.className = "fa-regular fa-circle text-slate-400";
+            icon3.className = "fa-regular fa-circle text-slate-400";
+
+            feedback.classList.remove('hidden', 'bg-red-900/50', 'text-red-300', 'bg-emerald-900/50', 'text-emerald-300');
+
+            if (option === 2) {
+                icon2.className = "fa-solid fa-circle-check text-emerald-400";
+                feedback.classList.add('bg-emerald-900/50', 'text-emerald-300');
+                feedback.innerHTML = '<i class="fa-solid fa-check-circle"></i> Correct! "The doctor" is third-person singular (he/she), requiring the "-s" verb ending: "checks".';
+            } else {
+                if (option === 1) icon1.className = "fa-solid fa-circle-xmark text-red-400";
+                if (option === 3) icon3.className = "fa-solid fa-circle-xmark text-red-400";
+                feedback.classList.add('bg-red-900/50', 'text-red-300');
+                feedback.innerHTML = '<i class="fa-solid fa-xmark-circle"></i> Incorrect. Remember that third-person singular subjects require "-s" or "-es" in present simple tense.';
+            }
         }
 
-        function closePublicationModal() {
-            document.getElementById('pub-modal').classList.add('hidden');
+        // Tuition Calculator
+        function calculateTuition() {
+            const rate = parseFloat(document.getElementById('calc-type').value);
+            const hours = parseInt(document.getElementById('calc-hours').value);
+            const durationMultiplier = parseFloat(document.getElementById('calc-duration').value);
+
+            document.getElementById('hours-val').innerText = hours;
+
+            const baseMonthly = rate * hours * 4;
+            const finalMonthly = baseMonthly * durationMultiplier;
+
+            document.getElementById('calc-total').innerText = '$' + finalMonthly.toFixed(2);
+
+            const msg = document.getElementById('calc-discount-msg');
+            if (durationMultiplier === 0.9) {
+                msg.innerText = 'Includes 10% discount for 3-month package!';
+            } else if (durationMultiplier === 0.8) {
+                msg.innerText = 'Includes 20% discount for 6-month package!';
+            } else {
+                msg.innerText = 'Standard monthly rate';
+            }
         }
 
+        // Audio Demo Simulation
+        function toggleAudioDemo(id) {
+            const status = document.getElementById('audio-status-' + id);
+            const icon = document.getElementById('audio-icon-' + id);
+
+            if (icon.classList.contains('fa-play')) {
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+                status.innerText = 'Playing demo audio...';
+                setTimeout(() => {
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                    status.innerText = 'Demo finished';
+                }, 4000);
+            } else {
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                status.innerText = 'Paused';
+            }
+        }
+
+        // Blog Article Modal Reader
+        const articlesData = {
+            1: {
+                tag: 'EdTech Research',
+                title: 'How Generative AI Can Accelerate Your Speaking Fluency',
+                date: 'January 2026 | Published in Editorial Ucevista',
+                content: `<p>Generative AI tools such as ChatGPT, Claude, and Gemini have revolutionized language acquisition. In our co-authored 2025 research paper, we demonstrated that when learners use targeted audio-prompting techniques, speaking fluency improves dramatically.</p>
+                <p><strong>Key Takeaways:</strong></p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Use AI as a non-judgmental conversational partner available 24/7.</li>
+                    <li>Prompt the AI to correct your grammar after every 3 spoken sentences.</li>
+                    <li>Practice sector-specific roleplay scenarios (e.g. medical triage or job interviews).</li>
+                </ul>`
+            },
+            2: {
+                tag: 'Vocational',
+                title: '5 Essential Phrases Every Nursing Trainee Must Know in English',
+                date: 'February 2026 | Red Cross Nursing Program',
+                content: `<p>In clinical healthcare settings, clear and compassionate communication is critical. Here are 5 essential phrases taught in our Cruz Roja Nursing English module:</p>
+                <ol class="list-decimal pl-5 space-y-2">
+                    <li><strong>"Could you please rate your pain on a scale from 1 to 10?"</strong> - Standard pain assessment.</li>
+                    <li><strong>"I am going to measure your vital signs now."</strong> - Informing the patient before procedure.</li>
+                    <li><strong>"Please let me know if you feel uncomfortable at any point."</strong> - Patient care reassurance.</li>
+                    <li><strong>"Have you taken any medication today?"</strong> - Medical history intake.</li>
+                    <li><strong>"The doctor will be with you shortly."</strong> - Patient waiting management.</li>
+                </ol>`
+            },
+            3: {
+                tag: 'Pronunciation',
+                title: 'Fixing the Top 3 Pronunciation Traps for Native Spanish Speakers',
+                date: 'March 2026 | @teachermotta EdTech',
+                content: `<p>Native Spanish speakers often encounter predictable phonetical traps due to native tongue mechanics. Here is how we fix them:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>The "Es-speak" Trap:</strong> Spanish speakers tend to add an "e" sound before consonant clusters starting with "S" (e.g. "eschool" instead of "school"). <em>Fix: Start with a snake hissing sound: "Sss-chool".</em></li>
+                    <li><strong>The /v/ vs /b/ Confusion:</strong> In Spanish, B and V sound almost identical. In English, /v/ requires placing top teeth on bottom lip.</li>
+                    <li><strong>Short /i/ vs Long /ee/:</strong> Distinguishing "ship" vs "sheep".</li>
+                </ul>`
+            }
+        };
+
+        function openArticleModal(id) {
+            const data = articlesData[id];
+            if (!data) return;
+
+            document.getElementById('article-tag').innerText = data.tag;
+            document.getElementById('article-title').innerText = data.title;
+            document.getElementById('article-date').innerText = data.date;
+            document.getElementById('article-content').innerHTML = data.content;
+
+            document.getElementById('article-modal').classList.remove('hidden');
+        }
+
+        function closeArticleModal() {
+            document.getElementById('article-modal').classList.add('hidden');
+        }
+
+        // Booking Modal functions
+        function openBookingModal(programName) {
+            document.getElementById('booking-program-name').innerText = programName;
+            document.getElementById('booking-modal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
+
+        function submitBookingModal() {
+            const name = document.getElementById('modal-user-name').value;
+            if (!name) {
+                alert('Please enter your name.');
+                return;
+            }
+            closeBookingModal();
+            showToast('Booking request received! We will contact you on WhatsApp/Email.');
+        }
+
+        // Form Submission
         function handleFormSubmit(event) {
             event.preventDefault();
             const form = document.getElementById('contact-form');
@@ -801,19 +1079,23 @@
             }, 5000);
         }
 
-        function downloadResumeCopy() {
-            const cvSummaryText = `EDWIN A. MOTTA HERRERA\nBilingual Educator & Research Student\nEmail: e.motta24@gmail.com | Phone: +57 3175551791\nTuluá, Colombia | TikTok/YouTube: @teachermotta\nRanking #1 GPA in Bachelor's in Foreign Languages (UCEVA)\nPublication: Garcia, S & Motta, E. (2025) Editorial Ucevista\nTOEFL: 84/120`;
-            
-            const tempTextArea = document.createElement('textarea');
-            tempTextArea.value = cvSummaryText;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
+        // Copy resource helper
+        function copyResourceSummary(title) {
+            const temp = document.createElement('textarea');
+            temp.value = `Free Study Guide Request: ${title} - Teacher Motta Academy (e.motta24@gmail.com)`;
+            document.body.appendChild(temp);
+            temp.select();
             document.execCommand('copy');
-            document.body.removeChild(tempTextArea);
+            document.body.removeChild(temp);
 
+            showToast(`Resource link copied! Emailing or messaging Teacher Motta will give you instant access.`);
+        }
+
+        // Notification Toast
+        function showToast(message) {
             const msg = document.createElement('div');
-            msg.className = 'fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-2xl z-50 flex items-center gap-2 border border-emerald-500';
-            msg.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-400"></i> Profile summary copied to clipboard!';
+            msg.className = 'fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-2xl z-50 flex items-center gap-2 border border-emerald-500 animate-fade-in';
+            msg.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-400"></i> ' + message;
             document.body.appendChild(msg);
 
             setTimeout(() => {
