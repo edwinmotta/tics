@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edwin A. Motta Herrera | Bilingual Educator & EdTech Researcher</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        },
+                        accent: {
+                            50: '#f0f9ff',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark-glass {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        .tab-btn.active {
+            color: #16a34a;
+            border-bottom-color: #16a34a;
+            font-weight: 700;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Main Header / Navigation -->
+    <header class="sticky top-0 z-50 glass-card shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand / Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('tab-inicio')">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-heading font-extrabold text-xl shadow-md shadow-emerald-500/20">
+                        EM
+                    </div>
+                    <div>
+                        <h1 class="font-heading font-extrabold text-lg sm:text-xl text-slate-900 leading-tight">Edwin A. Motta</h1>
+                        <p class="text-xs text-emerald-600 font-semibold tracking-wide flex items-center gap-1">
+                            <span>@teachermotta</span>
+                            <i class="fa-solid fa-circle-check text-[10px]"></i>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Tabs -->
+                <nav class="hidden lg:flex space-x-1 font-medium text-sm text-slate-600">
+                    <button onclick="switchTab('tab-inicio')" id="nav-tab-inicio" class="tab-btn active px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-house text-xs"></i> Home
+                    </button>
+                    <button onclick="switchTab('tab-academia')" id="nav-tab-academia" class="tab-btn px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-xs"></i> Academics & Research
+                    </button>
+                    <button onclick="switchTab('tab-docencia')" id="nav-tab-docencia" class="tab-btn px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-chalkboard-user text-xs"></i> Teaching & EdTech
+                    </button>
+                    <button onclick="switchTab('tab-interpretacion')" id="nav-tab-interpretacion" class="tab-btn px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-language text-xs"></i> Interpretation & Skills
+                    </button>
+                    <button onclick="switchTab('tab-j1')" id="nav-tab-j1" class="tab-btn px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
+                        <i class="fa-solid fa-passport text-xs"></i> J-1 Profile & Contact
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <button onclick="switchTab('tab-inicio'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-house w-5 text-emerald-600"></i> Home
+            </button>
+            <button onclick="switchTab('tab-academia'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-graduation-cap w-5 text-emerald-600"></i> Academics & Research
+            </button>
+            <button onclick="switchTab('tab-docencia'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-chalkboard-user w-5 text-emerald-600"></i> Teaching & EdTech
+            </button>
+            <button onclick="switchTab('tab-interpretacion'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-language w-5 text-emerald-600"></i> Interpretation & Skills
+            </button>
+            <button onclick="switchTab('tab-j1'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
+                <i class="fa-solid fa-passport w-5 text-emerald-600"></i> J-1 Profile & Contact
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+
+        <!-- ==================== TAB 1: HOME ==================== -->
+        <section id="tab-inicio" class="tab-content animate-fade-in space-y-12">
+            <!-- Hero Section -->
+            <div class="relative rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 text-white p-6 sm:p-10 lg:p-12 overflow-hidden shadow-2xl">
+                <!-- Background Decorative Gradients -->
+                <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    <!-- Text Info -->
+                    <div class="lg:col-span-8 space-y-6">
+                        <h1 class="text-3xl sm:text-5xl font-heading font-extrabold tracking-tight leading-tight">
+                            Edwin A. Motta Herrera
+                        </h1>
+                        <p class="text-emerald-400 text-lg sm:text-xl font-medium">
+                            Bilingual Educator | EdTech Researcher | English-Spanish Interpreter
+                        </p>
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                            Dedicated to transforming language learning through the innovative use of Artificial Intelligence, inclusive pedagogy, and intercultural exchange. Seeking J-1 Exchange Visitor opportunities in the United States as an Intern Teacher.
+                        </p>
+
+                        <!-- Key Action Buttons -->
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button onclick="switchTab('tab-j1')" class="px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-900 font-extrabold rounded-xl shadow-lg shadow-emerald-500/25 transition duration-200 flex items-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Contact / J-1 Profile
+                            </button>
+                            <button onclick="switchTab('tab-academia')" class="px-6 py-3.5 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold rounded-xl border border-slate-600/50 transition duration-200 flex items-center gap-2">
+                                <i class="fa-solid fa-book-bookmark"></i> View Research & Achievements
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Avatar Card -->
+                    <div class="lg:col-span-4 flex justify-center">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
+                            <div class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 p-2 shadow-xl max-w-xs sm:max-w-sm">
+                                <img src="Foto CV_Hoja De Vida_Resume_ Yo.jpg" alt="Edwin A. Motta Herrera" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/400x450/1e293b/22c55e?text=Edwin+A.+Motta';"
+                                     class="w-full h-80 object-cover rounded-xl object-top">
+                                <div class="p-3 text-center bg-slate-900/90 rounded-b-xl">
+                                    <p class="font-bold text-white text-sm">Edwin Motta</p>
+                                    <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-emerald-400"></i> Tuluá, Valle del Cauca, Colombia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Metrics Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Metric 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">#1 Ranked</h2>
+                    <p class="text-slate-600 text-sm font-medium mt-1">Highest GPA in Degree Program (UCEVA)</p>
+                    <p class="text-xs text-emerald-600 mt-2 font-semibold"><i class="fa-solid fa-award"></i> Consecutive "Estudiante Buena Nota" Honor</p>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">Published</h2>
+                    <p class="text-slate-600 text-sm font-medium mt-1">Research on AI & Macro-Skills</p>
+                    <p class="text-xs text-slate-500 mt-2">Editorial Ucevista (2025)</p>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">TOEFL 84</h2>
+                    <p class="text-slate-600 text-sm font-medium mt-1">High-Intermediate / Advanced English</p>
+                    <p class="text-xs text-sky-600 mt-2 font-semibold"><i class="fa-solid fa-language"></i> Consecutive Interpreter</p>
+                </div>
+
+                <!-- Metric 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold font-heading text-slate-900">Mission 2026</h2>
+                    <p class="text-slate-600 text-sm font-medium mt-1">International Student Representative</p>
+                    <p class="text-xs text-purple-600 mt-2 font-semibold"><i class="fa-solid fa-plane-departure"></i> Nat'l Univ. of Quilmes (Argentina)</p>
+                </div>
+            </div>
+
+            <!-- Profile Summary & Highlights -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-heading font-bold text-slate-900">Integrated Professional Summary</h2>
+                        <p class="text-xs text-slate-500">Multidisciplinary profile focused on bilingual education & language services</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-700 text-sm leading-relaxed">
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/60">
+                        <h3 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-emerald-600"></i> Academic Leadership
+                        </h3>
+                        <p>
+                            Foreign Language Teaching student at UCEVA. Recognized for maintaining the highest cumulative GPA in the entire program and leading interdisciplinary research projects ("Linking Projects").
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/60">
+                        <h3 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-chalkboard text-teal-600"></i> Pedagogical Experience
+                        </h3>
+                        <p>
+                            English Instructor at the Red Cross (Nursing Assistant Program) and educational content creator (@teachermotta). Proven expertise in micro-learning, AI-driven instructional design, and private tutoring since 2017.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/60">
+                        <h3 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-headset text-cyan-600"></i> Interpretation & Global Service
+                        </h3>
+                        <p>
+                            Remote bilingual interpreter for international firms including LSA and OWGS, facilitating clear, accurate, and culturally sensitive communication across healthcare, legal, and customer service domains.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 2: ACADEMICS & RESEARCH ==================== -->
+        <section id="tab-academia" class="tab-content hidden animate-fade-in space-y-8">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-emerald-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                <span class="text-xs uppercase font-bold tracking-widest text-emerald-400">Academic Trajectory</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">Excellence, Leadership & Scientific Research</h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
+                    Higher education at UCEVA backed by institutional honors, published scientific research, and international academic mobility.
+                </p>
+            </div>
+
+            <!-- University Main Card -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-6">
+                    <div>
+                        <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">Undergraduate Degree in Progress</span>
+                        <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900 mt-2">Unidad Central del Valle del Cauca (UCEVA)</h3>
+                        <p class="text-slate-600 font-medium text-sm">Bachelor's Degree in Foreign Languages with an Emphasis in English</p>
+                        <p class="text-xs text-slate-500 mt-1"><i class="fa-regular fa-calendar"></i> Expected Graduation: December 2029 | Tuluá, Colombia</p>
+                    </div>
+                    <div class="text-left sm:text-right">
+                        <div class="inline-block bg-amber-50 border border-amber-200 rounded-2xl p-4 text-slate-800">
+                            <p class="text-xs font-bold uppercase text-amber-700 tracking-wider">Academic Merit</p>
+                            <p class="text-lg font-extrabold text-slate-900">#1 Highest GPA</p>
+                            <p class="text-xs text-slate-600">"Estudiante Buena Nota" Award</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Accomplishments List -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-3">
+                            <i class="fa-solid fa-award text-amber-500"></i> Institutional Recognition
+                        </h4>
+                        <ul class="space-y-2 text-sm text-slate-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600 text-xs mt-1"></i>
+                                <span><strong>#1 Academic Ranking:</strong> Highest cumulative GPA across the entire Bachelor's degree program.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-emerald-600 text-xs mt-1"></i>
+                                <span><strong>"Estudiante Buena Nota" Award:</strong> Consecutively awarded every semester for outstanding performance.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-3">
+                            <i class="fa-solid fa-scroll text-teal-600"></i> Diplomas in Research (2025)
+                        </h4>
+                        <ul class="space-y-2 text-sm text-slate-700">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-teal-600 text-xs mt-1"></i>
+                                <span><strong>Diploma in Research Thinking:</strong> Advanced training in scientific methodology and pedagogical problem formulation.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-teal-600 text-xs mt-1"></i>
+                                <span><strong>Diploma in Development of Research Products:</strong> Writing and structuring scientific publications.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Research Publication Box -->
+            <div class="bg-gradient-to-br from-slate-900 to-emerald-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-emerald-900/50">
+                <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider mb-2">
+                    <i class="fa-solid fa-book-open"></i> Official Scientific Publication (2025)
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold font-heading text-white">
+                    "Incidence of AI in teaching English as a foreign language: a focus on linguistic macro-skills"
+                </h3>
+                <p class="text-slate-300 text-sm mt-2">
+                    <strong>Authors:</strong> Garcia, S. & <strong>Motta, E.</strong> (2025). Published in <em>Editorial Ucevista</em>, p. 120.
+                </p>
+
+                <div class="my-6 p-4 bg-slate-800/80 rounded-2xl border border-slate-700 text-sm text-slate-300 space-y-2">
+                    <p class="font-semibold text-emerald-300">Article Summary:</p>
+                    <p>
+                        This research explores the direct impact of Generative AI tools on developing the four core linguistic macro-skills (Listening, Speaking, Reading, Writing) in TEFL students, proposing structured pedagogical frameworks for their ethical and effective classroom integration.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="text-xs text-slate-400 font-mono">
+                        URI Repository: <a href="http://hdl.handle.net/20.500.12993/5396" target="_blank" class="text-emerald-400 hover:underline">http://hdl.handle.net/20.500.12993/5396</a>
+                    </div>
+                    <button onclick="openPublicationModal()" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold text-sm rounded-xl transition flex items-center gap-2">
+                        <i class="fa-solid fa-file-pdf"></i> View Research Overview
+                    </button>
+                </div>
+            </div>
+
+            <!-- International Mobility & Leadership Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- International Academic Mission -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-bold rounded-full">Upcoming Mission: Nov - Dec 2026</span>
+                    <h3 class="text-lg font-bold font-heading text-slate-900">International Academic Mission - Buenos Aires, Argentina</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Exclusively selected by UCEVA university administration as the primary student representative (due to ranking #1 in GPA) to participate in international academic mobility at <strong>Universidad Nacional de Quilmes</strong>.
+                    </p>
+                    <ul class="text-xs text-slate-600 space-y-2 pt-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> Cross-cultural competency workshops and advanced academic seminars.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-purple-600"></i> Ambassador for UCEVA and Colombia in international networks.</li>
+                    </ul>
+                </div>
+
+                <!-- Linking Projects Leadership -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <span class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-bold rounded-full">Project Leadership (2025 - Present)</span>
+                    <h3 class="text-lg font-bold font-heading text-slate-900">Team Leader in UCEVA "Linking Projects"</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Appointed team leader to design and execute 3 consecutive multidisciplinary research projects, combining curriculum subjects to solve complex educational questions.
+                    </p>
+                    <ul class="text-xs text-slate-600 space-y-2 pt-2">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-600"></i> Operations management, task delegation, and data synthesis.</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-600"></i> Consistently achieved top evaluative scores.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 3: TEACHING & EDTECH ==================== -->
+        <section id="tab-docencia" class="tab-content hidden animate-fade-in space-y-8">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-teal-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                <span class="text-xs uppercase font-bold tracking-widest text-teal-400">Methodology & Experience</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">In-Person, Digital & EdTech Teaching</h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
+                    Combining institutional classroom instruction, multi-platform educational content creation, and AI-powered accelerated learning strategies.
+                </p>
+            </div>
+
+            <!-- Timeline of Teaching Experience -->
+            <div class="space-y-6">
+
+                <!-- Teaching Role 1: Cruz Roja -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-red-500"></div>
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                        <div>
+                            <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full">August 2026 - Present</span>
+                            <h3 class="text-xl font-bold font-heading text-slate-900 mt-2">English Instructor - Nursing Assistant Program</h3>
+                            <p class="text-sm font-semibold text-slate-600">Colombian Red Cross (Cruz Roja) | Buga, Colombia</p>
+                        </div>
+                        <div class="px-4 py-2 bg-slate-100 rounded-xl text-xs font-bold text-slate-700">
+                            Spanish / Medical English
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-slate-700 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-chevron-right text-emerald-600 text-xs mt-1"></i>
+                            <span>Delivering <strong>"English I"</strong> and <strong>"English II"</strong> modules tailored for healthcare trainees.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-chevron-right text-emerald-600 text-xs mt-1"></i>
+                            <span>Focusing on conversational fluency and essential medical terminology for healthcare environments.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-chevron-right text-emerald-600 text-xs mt-1"></i>
+                            <span>Assessing student progress through oral exams, quizzes, and clinical simulation exercises in class.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Teaching Role 2: EdTech Content Creator -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-2 h-full bg-emerald-500"></div>
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                        <div>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">October 2023 - Present</span>
+                            <h3 class="text-xl font-bold font-heading text-slate-900 mt-2">Educational Content Creator & Digital Educator</h3>
+                            <p class="text-sm font-semibold text-emerald-600">TikTok & YouTube: @teachermotta</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-black text-white text-xs font-bold rounded-lg"><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                            <span class="px-3 py-1 bg-red-600 text-white text-xs font-bold rounded-lg"><i class="fa-brands fa-youtube"></i> YouTube</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-4">
+                        Producing micro-learning video lessons focused on practical pronunciation, grammar simplification, and vocabulary, reaching autonomous learners across Latin America and worldwide.
+                    </p>
+
+                    <!-- Interactive Demo Box -->
+                    <div class="bg-slate-900 text-white rounded-2xl p-5 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider"><i class="fa-solid fa-play"></i> Micro-Learning Teaching Strategy</span>
+                            <span class="text-xs text-slate-400">@teachermotta EdTech</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
+                                <p class="font-bold text-emerald-300">1. Grammar in 60 Seconds</p>
+                                <p class="text-slate-400 mt-1">Concise breakdowns with visual aids and memory anchors.</p>
+                            </div>
+                            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
+                                <p class="font-bold text-emerald-300">2. Pronunciation & AI Prompts</p>
+                                <p class="text-slate-400 mt-1">Utilizing AI tools as interactive real-time pronunciation coaches.</p>
+                            </div>
+                            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700">
+                                <p class="font-bold text-emerald-300">3. Active Audience Engagement</p>
+                                <p class="text-slate-400 mt-1">Interactive comment challenges that build autonomous learning habits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teaching Role 3: Private Tutor -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+                        <div>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-bold rounded-full">January 2017 - Present</span>
+                            <h3 class="text-xl font-bold font-heading text-slate-900 mt-2">Independent Private English Tutor</h3>
+                            <p class="text-sm font-semibold text-slate-600">Tuluá, Colombia (In-Person & Virtual)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        Providing customized 1-on-1 and small-group instruction for learners of diverse age groups and proficiency levels. Designing tailored lesson plans emphasizing speaking, listening, and core grammar foundations.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== TAB 4: INTERPRETATION & SKILLS ==================== -->
+        <section id="tab-interpretacion" class="tab-content hidden animate-fade-in space-y-8">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-cyan-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                <span class="text-xs uppercase font-bold tracking-widest text-cyan-400">Professional Versatility</span>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold mt-1">Bilingual Interpretation, AI & Technical Skills</h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
+                    Solid track record in international language services and proficiency in emerging technologies applied to education and productivity.
+                </p>
+            </div>
+
+            <!-- Interpretation Experience Grid -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <h3 class="text-xl font-bold font-heading text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-headset text-cyan-600"></i> Interpretation & Global Client Service
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- LSA -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">Feb 2024 - Present</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Spanish - English Interpreter</h4>
+                        <p class="text-xs font-semibold text-slate-600">Language Services Associates (LSA) | Remote</p>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Delivering real-time consecutive interpretation across healthcare, legal, and customer service settings with high accuracy and cultural sensitivity.
+                        </p>
+                    </div>
+
+                    <!-- OWGS -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <span class="text-xs font-bold text-slate-600 bg-slate-200 px-2.5 py-0.5 rounded-full">Oct 2022 - Jan 2024</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Spanish - English Interpreter</h4>
+                        <p class="text-xs font-semibold text-slate-600">One World Global Services (OWGS) | Remote</p>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Facilitating smooth cross-cultural communication between English and Spanish speakers in fast-paced professional scenarios.
+                        </p>
+                    </div>
+
+                    <!-- Teleperformance -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <span class="text-xs font-bold text-slate-600 bg-slate-200 px-2.5 py-0.5 rounded-full">Mar 2022 - Oct 2022</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Customer Service & Sales Representative</h4>
+                        <p class="text-xs font-semibold text-slate-600">Teleperformance Colombia S.A.S | Remote</p>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Handling international clients in English and Spanish, resolving inquiries with empathy and active listening skills.
+                        </p>
+                    </div>
+
+                    <!-- Accedo -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <span class="text-xs font-bold text-slate-600 bg-slate-200 px-2.5 py-0.5 rounded-full">Oct 2021 - Mar 2022</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Customer Service & Sales Representative</h4>
+                        <p class="text-xs font-semibold text-slate-600">Accedo Technologies | Pereira, Colombia</p>
+                        <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                            Providing high-standard bilingual support for international accounts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills & Tech Toolkit Showcase -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- AI & Technical Skills -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-lg font-bold font-heading text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-robot text-purple-600"></i> AI & EdTech Tools
+                    </h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>Generative AI Prompting (ChatGPT, Claude, Gemini)</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full w-[95%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>AI-Assisted Instructional Design</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                <div class="bg-emerald-600 h-2 rounded-full w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-bold text-slate-700 mb-1">
+                                <span>Multimedia Editing (Canva, CapCut)</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2">
+                                <div class="bg-sky-600 h-2 rounded-full w-[92%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages & Soft Skills -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-lg font-bold font-heading text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-comments text-emerald-600"></i> Languages & Competencies
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center">
+                            <p class="text-xs text-emerald-700 font-bold uppercase">Spanish</p>
+                            <p class="text-lg font-extrabold text-slate-900">Native</p>
+                        </div>
+                        <div class="bg-sky-50 p-4 rounded-2xl border border-sky-100 text-center">
+                            <p class="text-xs text-sky-700 font-bold uppercase">English</p>
+                            <p class="text-lg font-extrabold text-slate-900">TOEFL 84 / B2+</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">Leadership</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">Cross-Cultural Communication</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">Adaptability</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">Classroom Management</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TAB 5: J-1 PROFILE & CONTACT ==================== -->
+        <section id="tab-j1" class="tab-content hidden animate-fade-in space-y-8">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl">
+                <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">
+                    <i class="fa-solid fa-passport"></i> Exchange Visitor Program Candidate
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold">J-1 Intern Teacher USA Profile & Contact</h2>
+                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
+                    Actively seeking J-1 Exchange Visitor teaching opportunities in the United States to foster student growth, promote inclusion, and drive cultural exchange.
+                </p>
+            </div>
+
+            <!-- Video Intro Showcase Box -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold font-heading text-slate-900">Introduction Video (90 Seconds)</h3>
+                        <p class="text-xs text-slate-500">Personal introductory video in English for U.S. sponsors and host schools.</p>
+                    </div>
+                    <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">Loom Video Ready</span>
+                </div>
+
+                <!-- Video Box Simulation -->
+                <div class="aspect-video bg-slate-900 rounded-2xl flex flex-col items-center justify-center text-white relative overflow-hidden group cursor-pointer border border-slate-800 shadow-inner">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('Foto CV_Hoja De Vida_Resume_ Yo.jpg');"></div>
+                    <div class="relative z-10 text-center p-6 space-y-3">
+                        <div class="w-16 h-16 rounded-full bg-emerald-500 text-slate-900 flex items-center justify-center text-2xl font-bold mx-auto group-hover:scale-110 transition duration-300 shadow-lg shadow-emerald-500/50">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                        <p class="font-bold text-lg text-white">Watch Edwin Motta's Intro Video</p>
+                        <p class="text-xs text-slate-300">Click to preview introduction in Loom format</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Grid & Resume Download -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Direct Contact Information -->
+                <div class="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+                    <h3 class="text-2xl font-bold font-heading text-white">Direct Contact</h3>
+                    <p class="text-slate-400 text-sm">
+                        Available for interviews, J-1 screening processes, and academic collaborations.
+                    </p>
+
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Email Address</p>
+                                <a href="mailto:e.motta24@gmail.com" class="font-bold text-white hover:text-emerald-400">e.motta24@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Phone / WhatsApp</p>
+                                <a href="tel:+573175551791" class="font-bold text-white hover:text-emerald-400">+57 317 555 1791</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">LinkedIn</p>
+                                <a href="https://lix.li/XTySbb" target="_blank" class="font-bold text-white hover:text-emerald-400">Professional LinkedIn Profile</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Location</p>
+                                <p class="font-bold text-white">Tuluá, Valle del Cauca, Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="downloadResumeCopy()" class="w-full py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-900 font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-download"></i> Copy Resume Summary
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contact Message Form -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-xl font-bold font-heading text-slate-900">Send a Direct Message</h3>
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name / Organization</label>
+                            <input type="text" required placeholder="e.g. J-1 Sponsor / School Representative / Recruiter" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Contact Email</label>
+                            <input type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Subject</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                                <option>J-1 Program Opportunity</option>
+                                <option>Academic / Research Inquiry</option>
+                                <option>Interpretation / Teaching Engagement</option>
+                                <option>Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Message</label>
+                            <textarea rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div id="form-success-msg" class="hidden p-4 bg-emerald-100 border border-emerald-300 text-emerald-800 text-sm font-semibold rounded-xl text-center">
+                        <i class="fa-solid fa-circle-check"></i> Thank you for reaching out! Your message has been sent successfully.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal for Publication Abstract Details -->
+    <div id="pub-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-4 shadow-2xl animate-fade-in relative">
+            <button onclick="closePublicationModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">UCEVA Bibliographic Record</span>
+            <h3 class="text-xl font-bold font-heading text-slate-900">Incidence of AI in teaching English as a foreign language: a focus on linguistic macro-skills</h3>
+            <div class="text-xs text-slate-600 space-y-2 border-y border-slate-100 py-3">
+                <p><strong>Authors:</strong> Garcia, S. & Motta, E.</p>
+                <p><strong>Year:</strong> 2025</p>
+                <p><strong>Publisher:</strong> Editorial Ucevista, Page 120</p>
+                <p><strong>Handle/URL:</strong> http://hdl.handle.net/20.500.12993/5396</p>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed">
+                This study investigates how generative AI tools can be integrated into methodic English language teaching strategies to enhance listening comprehension, oral production, reading, and writing skills in higher education settings.
+            </p>
+            <div class="pt-2 flex justify-end">
+                <button onclick="closePublicationModal()" class="px-5 py-2.5 bg-slate-900 text-white font-bold rounded-xl text-xs">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-md bg-emerald-500 text-slate-900 font-bold flex items-center justify-center text-xs">EM</div>
+                <span class="font-bold text-slate-200">Edwin A. Motta Herrera</span> &copy; 2026. All rights reserved.
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://lix.li/XTySbb" target="_blank" class="hover:text-emerald-400 transition"><i class="fa-brands fa-linkedin text-base"></i></a>
+                <a href="mailto:e.motta24@gmail.com" class="hover:text-emerald-400 transition"><i class="fa-solid fa-envelope text-base"></i></a>
+                <span class="text-slate-500 font-mono">@teachermotta</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Show selected tab content
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+            }
+
+            // Update Desktop Nav Button Styles
+            const navButtons = document.querySelectorAll('.tab-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('active', 'text-emerald-600', 'border-emerald-600', 'font-bold');
+                btn.classList.add('border-transparent', 'text-slate-600');
+            });
+
+            const activeNavBtn = document.getElementById('nav-' + tabId);
+            if (activeNavBtn) {
+                activeNavBtn.classList.add('active', 'text-emerald-600', 'border-emerald-600', 'font-bold');
+                activeNavBtn.classList.remove('border-transparent', 'text-slate-600');
+            }
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+
+        function openPublicationModal() {
+            document.getElementById('pub-modal').classList.remove('hidden');
+        }
+
+        function closePublicationModal() {
+            document.getElementById('pub-modal').classList.add('hidden');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            const successMsg = document.getElementById('form-success-msg');
+            
+            form.reset();
+            successMsg.classList.remove('hidden');
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+        }
+
+        function downloadResumeCopy() {
+            const cvSummaryText = `EDWIN A. MOTTA HERRERA\nBilingual Educator & Research Student\nEmail: e.motta24@gmail.com | Phone: +57 3175551791\nTuluá, Colombia | TikTok/YouTube: @teachermotta\nRanking #1 GPA in Bachelor's in Foreign Languages (UCEVA)\nPublication: Garcia, S & Motta, E. (2025) Editorial Ucevista\nTOEFL: 84/120 | J-1 Intern Teacher Candidate`;
+            
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = cvSummaryText;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const msg = document.createElement('div');
+            msg.className = 'fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-2xl z-50 flex items-center gap-2 border border-emerald-500';
+            msg.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-400"></i> Profile summary copied to clipboard!';
+            document.body.appendChild(msg);
+
+            setTimeout(() => {
+                msg.remove();
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
