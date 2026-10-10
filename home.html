@@ -100,9 +100,6 @@
                     <button onclick="switchTab('tab-interpretacion')" id="nav-tab-interpretacion" class="tab-btn px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
                         <i class="fa-solid fa-language text-xs"></i> Interpretation & Skills
                     </button>
-                    <button onclick="switchTab('tab-j1')" id="nav-tab-j1" class="tab-btn px-4 py-3 border-b-2 border-transparent hover:text-emerald-600 transition duration-200 flex items-center gap-2">
-                        <i class="fa-solid fa-passport text-xs"></i> J-1 Profile & Contact
-                    </button>
                 </nav>
 
                 <!-- Mobile Menu Button -->
@@ -128,9 +125,6 @@
             <button onclick="switchTab('tab-interpretacion'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
                 <i class="fa-solid fa-language w-5 text-emerald-600"></i> Interpretation & Skills
             </button>
-            <button onclick="switchTab('tab-j1'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-emerald-600 flex items-center gap-3">
-                <i class="fa-solid fa-passport w-5 text-emerald-600"></i> J-1 Profile & Contact
-            </button>
         </div>
     </header>
 
@@ -144,44 +138,28 @@
                 <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                    <!-- Text Info -->
-                    <div class="lg:col-span-8 space-y-6">
-                        <h1 class="text-3xl sm:text-5xl font-heading font-extrabold tracking-tight leading-tight">
-                            Edwin A. Motta Herrera
-                        </h1>
-                        <p class="text-emerald-400 text-lg sm:text-xl font-medium">
-                            Bilingual Educator | EdTech Researcher | English-Spanish Interpreter
-                        </p>
-                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-                            Dedicated to transforming language learning through the innovative use of Artificial Intelligence, inclusive pedagogy, and intercultural exchange. Seeking J-1 Exchange Visitor opportunities in the United States as an Intern Teacher.
-                        </p>
-
-                        <!-- Key Action Buttons -->
-                        <div class="flex flex-wrap gap-4 pt-2">
-                            <button onclick="switchTab('tab-j1')" class="px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-900 font-extrabold rounded-xl shadow-lg shadow-emerald-500/25 transition duration-200 flex items-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i> Contact / J-1 Profile
-                            </button>
-                            <button onclick="switchTab('tab-academia')" class="px-6 py-3.5 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold rounded-xl border border-slate-600/50 transition duration-200 flex items-center gap-2">
-                                <i class="fa-solid fa-book-bookmark"></i> View Research & Achievements
-                            </button>
-                        </div>
+                <div class="relative z-10 max-w-4xl space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-semibold">
+                        <i class="fa-solid fa-location-dot"></i> Tuluá, Valle del Cauca, Colombia
                     </div>
+                    <h1 class="text-3xl sm:text-5xl font-heading font-extrabold tracking-tight leading-tight">
+                        Edwin A. Motta Herrera
+                    </h1>
+                    <p class="text-emerald-400 text-lg sm:text-xl font-medium">
+                        Bilingual Educator | EdTech Researcher | English-Spanish Interpreter
+                    </p>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        Dedicated to transforming language learning through the innovative use of Artificial Intelligence, inclusive pedagogy, and intercultural exchange. Overcoming educational boundaries with digital innovation and academic excellence.
+                    </p>
 
-                    <!-- Profile Avatar Card -->
-                    <div class="lg:col-span-4 flex justify-center">
-                        <div class="relative group">
-                            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
-                            <div class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 p-2 shadow-xl max-w-xs sm:max-w-sm">
-                                <img src="Foto CV_Hoja De Vida_Resume_ Yo.jpg" alt="Edwin A. Motta Herrera" 
-                                     onerror="this.onerror=null; this.src='https://placehold.co/400x450/1e293b/22c55e?text=Edwin+A.+Motta';"
-                                     class="w-full h-80 object-cover rounded-xl object-top">
-                                <div class="p-3 text-center bg-slate-900/90 rounded-b-xl">
-                                    <p class="font-bold text-white text-sm">Edwin Motta</p>
-                                    <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-emerald-400"></i> Tuluá, Valle del Cauca, Colombia</p>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Key Action Buttons -->
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="mailto:e.motta24@gmail.com" class="px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-900 font-extrabold rounded-xl shadow-lg shadow-emerald-500/25 transition duration-200 flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Get in Touch
+                        </a>
+                        <button onclick="switchTab('tab-academia')" class="px-6 py-3.5 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold rounded-xl border border-slate-600/50 transition duration-200 flex items-center gap-2">
+                            <i class="fa-solid fa-book-bookmark"></i> View Research & Achievements
+                        </button>
                     </div>
                 </div>
             </div>
@@ -229,7 +207,7 @@
                 </div>
             </div>
 
-            <!-- Profile Summary & Highlights -->
+            <!-- Profile Summary & Contact Section -->
             <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
                 <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
                     <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg">
@@ -265,6 +243,99 @@
                         <p>
                             Remote bilingual interpreter for international firms including LSA and OWGS, facilitating clear, accurate, and culturally sensitive communication across healthcare, legal, and customer service domains.
                         </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Contact & Resume Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Direct Contact Information -->
+                <div class="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+                    <h3 class="text-2xl font-bold font-heading text-white">Direct Contact</h3>
+                    <p class="text-slate-400 text-sm">
+                        Available for academic collaborations, educational projects, and professional inquiries.
+                    </p>
+
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Email Address</p>
+                                <a href="mailto:e.motta24@gmail.com" class="font-bold text-white hover:text-emerald-400">e.motta24@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Phone / WhatsApp</p>
+                                <a href="tel:+573175551791" class="font-bold text-white hover:text-emerald-400">+57 317 555 1791</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">LinkedIn</p>
+                                <a href="https://lix.li/XTySbb" target="_blank" class="font-bold text-white hover:text-emerald-400">Professional LinkedIn Profile</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Location</p>
+                                <p class="font-bold text-white">Tuluá, Valle del Cauca, Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="downloadResumeCopy()" class="w-full py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-900 font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-download"></i> Copy Resume Summary
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contact Message Form -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-xl font-bold font-heading text-slate-900">Send a Direct Message</h3>
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name / Organization</label>
+                            <input type="text" required placeholder="e.g. Institution Representative / Recruiter" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Contact Email</label>
+                            <input type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Subject</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                                <option>Academic / Research Inquiry</option>
+                                <option>Interpretation / Teaching Engagement</option>
+                                <option>Educational Content Collaboration</option>
+                                <option>Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Message</label>
+                            <textarea rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition text-sm flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                    <div id="form-success-msg" class="hidden p-4 bg-emerald-100 border border-emerald-300 text-emerald-800 text-sm font-semibold rounded-xl text-center">
+                        <i class="fa-solid fa-circle-check"></i> Thank you for reaching out! Your message has been sent successfully.
                     </div>
                 </div>
             </div>
@@ -624,136 +695,6 @@
             </div>
         </section>
 
-        <!-- ==================== TAB 5: J-1 PROFILE & CONTACT ==================== -->
-        <section id="tab-j1" class="tab-content hidden animate-fade-in space-y-8">
-            <!-- Header Banner -->
-            <div class="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl">
-                <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider mb-1">
-                    <i class="fa-solid fa-passport"></i> Exchange Visitor Program Candidate
-                </div>
-                <h2 class="text-2xl sm:text-3xl font-heading font-extrabold">J-1 Intern Teacher USA Profile & Contact</h2>
-                <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-3xl">
-                    Actively seeking J-1 Exchange Visitor teaching opportunities in the United States to foster student growth, promote inclusion, and drive cultural exchange.
-                </p>
-            </div>
-
-            <!-- Video Intro Showcase Box -->
-            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold font-heading text-slate-900">Introduction Video (90 Seconds)</h3>
-                        <p class="text-xs text-slate-500">Personal introductory video in English for U.S. sponsors and host schools.</p>
-                    </div>
-                    <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full">Loom Video Ready</span>
-                </div>
-
-                <!-- Video Box Simulation -->
-                <div class="aspect-video bg-slate-900 rounded-2xl flex flex-col items-center justify-center text-white relative overflow-hidden group cursor-pointer border border-slate-800 shadow-inner">
-                    <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('Foto CV_Hoja De Vida_Resume_ Yo.jpg');"></div>
-                    <div class="relative z-10 text-center p-6 space-y-3">
-                        <div class="w-16 h-16 rounded-full bg-emerald-500 text-slate-900 flex items-center justify-center text-2xl font-bold mx-auto group-hover:scale-110 transition duration-300 shadow-lg shadow-emerald-500/50">
-                            <i class="fa-solid fa-play ml-1"></i>
-                        </div>
-                        <p class="font-bold text-lg text-white">Watch Edwin Motta's Intro Video</p>
-                        <p class="text-xs text-slate-300">Click to preview introduction in Loom format</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Grid & Resume Download -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <!-- Direct Contact Information -->
-                <div class="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
-                    <h3 class="text-2xl font-bold font-heading text-white">Direct Contact</h3>
-                    <p class="text-slate-400 text-sm">
-                        Available for interviews, J-1 screening processes, and academic collaborations.
-                    </p>
-
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400 font-medium">Email Address</p>
-                                <a href="mailto:e.motta24@gmail.com" class="font-bold text-white hover:text-emerald-400">e.motta24@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400 font-medium">Phone / WhatsApp</p>
-                                <a href="tel:+573175551791" class="font-bold text-white hover:text-emerald-400">+57 317 555 1791</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400 font-medium">LinkedIn</p>
-                                <a href="https://lix.li/XTySbb" target="_blank" class="font-bold text-white hover:text-emerald-400">Professional LinkedIn Profile</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 p-3 bg-slate-800/80 rounded-2xl border border-slate-700/80">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-400 font-medium">Location</p>
-                                <p class="font-bold text-white">Tuluá, Valle del Cauca, Colombia</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <button onclick="downloadResumeCopy()" class="w-full py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-slate-900 font-extrabold rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
-                            <i class="fa-solid fa-download"></i> Copy Resume Summary
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Contact Message Form -->
-                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
-                    <h3 class="text-xl font-bold font-heading text-slate-900">Send a Direct Message</h3>
-                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name / Organization</label>
-                            <input type="text" required placeholder="e.g. J-1 Sponsor / School Representative / Recruiter" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Contact Email</label>
-                            <input type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Subject</label>
-                            <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
-                                <option>J-1 Program Opportunity</option>
-                                <option>Academic / Research Inquiry</option>
-                                <option>Interpretation / Teaching Engagement</option>
-                                <option>Other Inquiry</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Message</label>
-                            <textarea rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition text-sm flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                    <div id="form-success-msg" class="hidden p-4 bg-emerald-100 border border-emerald-300 text-emerald-800 text-sm font-semibold rounded-xl text-center">
-                        <i class="fa-solid fa-circle-check"></i> Thank you for reaching out! Your message has been sent successfully.
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <!-- Modal for Publication Abstract Details -->
@@ -861,7 +802,7 @@
         }
 
         function downloadResumeCopy() {
-            const cvSummaryText = `EDWIN A. MOTTA HERRERA\nBilingual Educator & Research Student\nEmail: e.motta24@gmail.com | Phone: +57 3175551791\nTuluá, Colombia | TikTok/YouTube: @teachermotta\nRanking #1 GPA in Bachelor's in Foreign Languages (UCEVA)\nPublication: Garcia, S & Motta, E. (2025) Editorial Ucevista\nTOEFL: 84/120 | J-1 Intern Teacher Candidate`;
+            const cvSummaryText = `EDWIN A. MOTTA HERRERA\nBilingual Educator & Research Student\nEmail: e.motta24@gmail.com | Phone: +57 3175551791\nTuluá, Colombia | TikTok/YouTube: @teachermotta\nRanking #1 GPA in Bachelor's in Foreign Languages (UCEVA)\nPublication: Garcia, S & Motta, E. (2025) Editorial Ucevista\nTOEFL: 84/120`;
             
             const tempTextArea = document.createElement('textarea');
             tempTextArea.value = cvSummaryText;
